@@ -7,6 +7,9 @@ const config: UserConfig = {
             const scopes = [
                 // Frontend Apps
                 'fe',
+                'shell',
+                'one',
+                'two',
             ];
             return [2, 'always', scopes];
         },
