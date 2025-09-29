@@ -1,0 +1,4 @@
+{
+	"feature-one-app": "http://localhost:5200/remoteEntry.js",
+	"feature-two-app": "http://localhost:6200/remoteEntry.js"
+}
