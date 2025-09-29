@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "commitlint": "commitlint"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@commitlint/types": "^19.8.1",
+        "typescript": "^5.4.5"
+    }
+}
