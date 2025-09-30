@@ -24,6 +24,10 @@ export const routes: Routes = [
       }).then((m) => m.FeatureTwoApp),
   },
   {
+    path: 'all',
+    loadComponent: () => import('./components/all-micro-frontends.component').then(m => m.AllMicroFrontendsComponent)
+  },
+  {
     path: '**',
     redirectTo: 'one',
   },
