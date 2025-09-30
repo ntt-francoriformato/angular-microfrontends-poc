@@ -10,6 +10,7 @@ const config: UserConfig = {
                 'shell',
                 'one',
                 'two',
+                'types',
             ];
             return [2, 'always', scopes];
         },
