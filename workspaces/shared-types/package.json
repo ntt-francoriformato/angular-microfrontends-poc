@@ -1,0 +1,24 @@
+{
+  "name": "@angular-microfrontends-poc/shared-types",
+  "version": "1.0.0",
+  "description": "Shared TypeScript types for Angular micro frontends communication",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "angular",
+    "microfrontend",
+    "types"
+  ],
+  "author": "Your Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.0"
+  }
+}

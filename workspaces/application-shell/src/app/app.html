@@ -1,7 +1,79 @@
-<div>
-  Hi from ApplicationShell!<br>
-  We are loading:
+<div class="app-container">
+  <h1>{{ title() }} - Micro Frontend Communication Demo</h1>
+  
+  <nav class="main-navigation">
+    <a routerLink="/one" routerLinkActive="active">Feature One</a>
+    <a routerLink="/two" routerLinkActive="active">Feature Two</a>
+    <a routerLink="/all" routerLinkActive="active">All Micro Frontends</a>
+  </nav>
+  
+  <div class="communications-wrapper">
+    <!-- Feature One Communication -->
+    <section class="communication-section">
+      <h2>Feature One Communication</h2>
+      
+      @if (messageFromFeatureOne()) {
+        <div class="message-received">
+          <h3>Message from Feature One:</h3>
+          <div class="message-content">{{ messageContent() }}</div>
+          
+          @if (messageMetadata()) {
+            <div class="message-metadata">
+              <h4>Message Details:</h4>
+              <ul>
+                <li><strong>From:</strong> {{ messageMetadata()?.from }}</li>
+                <li><strong>To:</strong> {{ messageMetadata()?.to }}</li>
+                <li><strong>Type:</strong> {{ messageMetadata()?.type }}</li>
+                <li><strong>Sent:</strong> {{ messageMetadata()?.timestamp }}</li>
+              </ul>
+            </div>
+          }
+        </div>
+      }
+      
+      <div class="message-sender">
+        <h3>Send Message to Feature One:</h3>
+        <div class="input-group">
+          <input [ngModel]="messageToFeatureOne()" (ngModelChange)="messageToFeatureOne.set($event)" placeholder="Enter message..." />
+          <button (click)="sendMessageToFeatureOne()">Send</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Feature Two Communication -->
+    <section class="communication-section">
+      <h2>Feature Two Communication</h2>
+      
+      @if (messageFromFeatureTwo()) {
+        <div class="message-received">
+          <h3>Message from Feature Two:</h3>
+          <div class="message-content">{{ messageFromFeatureTwo()?.payload }}</div>
+          
+          @if (messageFromFeatureTwo()) {
+            <div class="message-metadata">
+              <h4>Message Details:</h4>
+              <ul>
+                <li><strong>From:</strong> {{ messageFromFeatureTwo()?.from }}</li>
+                <li><strong>To:</strong> {{ messageFromFeatureTwo()?.to }}</li>
+                <li><strong>Type:</strong> {{ messageFromFeatureTwo()?.type }}</li>
+                <li><strong>Sent:</strong> {{ messageMetadataTwo()?.timestamp }}</li>
+              </ul>
+            </div>
+          }
+        </div>
+      }
+      
+      <div class="message-sender">
+        <h3>Send Message to Feature Two:</h3>
+        <div class="input-group">
+          <input [ngModel]="messageToFeatureTwo()" (ngModelChange)="messageToFeatureTwo.set($event)" placeholder="Enter message..." />
+          <button (click)="sendMessageToFeatureTwo()">Send</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="router-container">
+    <router-outlet />
+  </div>
 </div>
-
-
-<router-outlet />
